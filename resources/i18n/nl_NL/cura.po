@@ -1071,12 +1071,12 @@ msgstr "Cura kan niet worden gestart"
 #: /home/ruben/Projects/Cura/cura/CrashHandler.py:93
 msgctxt "@label crash message"
 msgid ""
-"<p><b>Oops, Ultimaker Cura has encountered something that doesn't seem right.</p></b>\n"
+"<p><b>Oops, Cura for Robo has encountered something that doesn't seem right.</p></b>\n"
 "                    <p>We encountered an unrecoverable error during start up. It was possibly caused by some incorrect configuration files. We suggest to backup and reset your configuration.</p>\n"
 "                    <p>Backups can be found in the configuration folder.</p>\n"
 "                    <p>Please send us this Crash Report to fix the problem.</p>\n"
 "                "
-msgstr "<p><b>Oeps, Ultimaker Cura heeft een probleem gedetecteerd.</p></b>\n                    <p>Tijdens het opstarten is een onherstelbare fout opgetreden. Deze fout is mogelijk veroorzaakt door enkele onjuiste configuratiebestanden. Het wordt aanbevolen een back-up te maken en de standaardinstelling van uw configuratie te herstellen.</p>\n                    <p>Back-ups bevinden zich in de configuratiemap.</p>\n                    <p>Stuur ons dit crashrapport om het probleem op te lossen.</p>\n                "
+msgstr "<p><b>Oeps, Cura for Robo heeft een probleem gedetecteerd.</p></b>\n                    <p>Tijdens het opstarten is een onherstelbare fout opgetreden. Deze fout is mogelijk veroorzaakt door enkele onjuiste configuratiebestanden. Het wordt aanbevolen een back-up te maken en de standaardinstelling van uw configuratie te herstellen.</p>\n                    <p>Back-ups bevinden zich in de configuratiemap.</p>\n                    <p>Stuur ons dit crashrapport om het probleem op te lossen.</p>\n                "
 
 #: /home/ruben/Projects/Cura/cura/CrashHandler.py:102
 msgctxt "@action:button"
@@ -3998,8 +3998,8 @@ msgstr "Allemaal als model importeren"
 
 #: /home/ruben/Projects/Cura/resources/qml/Cura.qml:19
 msgctxt "@title:window"
-msgid "Ultimaker Cura"
-msgstr "Ultimaker Cura"
+msgid "Cura for Robo"
+msgstr "Cura for Robo"
 
 #: /home/ruben/Projects/Cura/resources/qml/Cura.qml:102
 msgctxt "@title:menu menubar:toplevel"
