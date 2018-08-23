@@ -3,7 +3,6 @@
 
 from UM.Application import Application
 from UM.Logger import Logger
-from cura.CuraApplication import CuraApplication
 
 from cura.PrinterOutputDevice import PrinterOutputDevice, ConnectionState
 
@@ -59,7 +58,8 @@ class NetworkedPrinterOutputDevice(PrinterOutputDevice):
         printer_type = self._properties.get(b"machine", b"").decode("utf-8")
         printer_type_identifiers = {
             "9066": "ultimaker3",
-            "9511": "ultimaker3_extended"
+            "9511": "ultimaker3_extended",
+            "9051": "ultimaker_s5"
         }
         self._printer_type = "Unknown"
         for key, value in printer_type_identifiers.items():
@@ -254,8 +254,8 @@ class NetworkedPrinterOutputDevice(PrinterOutputDevice):
         self._last_manager_create_time = time()
         self._manager.authenticationRequired.connect(self._onAuthenticationRequired)
 
-        machine_manager = CuraApplication.getInstance().getMachineManager()
-        machine_manager.checkCorrectGroupName(self.getId(), self.name)
+        if b'temporary' not in self._properties:
+            Application.getInstance().getMachineManager().checkCorrectGroupName(self.getId(), self.name)
 
     def _registerOnFinishedCallback(self, reply: QNetworkReply, onFinished: Optional[Callable[[Any, QNetworkReply], None]]) -> None:
         if onFinished is not None:

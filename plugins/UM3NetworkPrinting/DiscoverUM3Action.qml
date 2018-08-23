@@ -14,20 +14,6 @@ Cura.MachineAction
     property var selectedDevice: null
     property bool completeProperties: true
 
-    Connections
-    {
-        target: dialog ? dialog : null
-        ignoreUnknownSignals: true
-        onNextClicked:
-        {
-            // Connect to the printer if the MachineAction is currently shown
-            if(base.parent.wizard == dialog)
-            {
-                connectToPrinter();
-            }
-        }
-    }
-
     function connectToPrinter()
     {
         if(base.selectedDevice && base.completeProperties)
@@ -158,7 +144,10 @@ Cura.MachineAction
                         model: manager.foundDevices
                         onModelChanged:
                         {
-                            var selectedKey = manager.getStoredKey();
+                            var selectedKey = manager.getLastManualEntryKey()
+                            // If there is no last manual entry key, then we select the stored key (if any)
+                            if (selectedKey == "")
+                                selectedKey = manager.getStoredKey()
                             for(var i = 0; i < model.length; i++) {
                                 if(model[i].key == selectedKey)
                                 {
@@ -249,13 +238,19 @@ Cura.MachineAction
                         {
                             if(base.selectedDevice)
                             {
-                                if(base.selectedDevice.printerType == "ultimaker3")
+                                if (base.selectedDevice.printerType == "ultimaker3")
                                 {
-                                    return catalog.i18nc("@label", "Ultimaker 3")
-                                } else if(base.selectedDevice.printerType == "ultimaker3_extended")
+                                    return "Ultimaker 3";
+                                }
+                                else if (base.selectedDevice.printerType == "ultimaker3_extended")
                                 {
-                                    return catalog.i18nc("@label", "Ultimaker 3 Extended")
-                                } else
+                                    return "Ultimaker 3 Extended";
+                                }
+                                else if (base.selectedDevice.printerType == "ultimaker_s5")
+                                {
+                                    return "Ultimaker S5";
+                                }
+                                else
                                 {
                                     return catalog.i18nc("@label", "Unknown") // We have no idea what type it is. Should not happen 'in the field'
                                 }
@@ -348,12 +343,10 @@ Cura.MachineAction
         onShowDialog:
         {
             printerKey = key;
-
             addressText = address;
+            manualPrinterDialog.show();
             addressField.selectAll();
             addressField.focus = true;
-
-            manualPrinterDialog.show();
         }
 
         onAccepted:

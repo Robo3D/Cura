@@ -104,6 +104,9 @@ class USBPrinterOutputDevice(PrinterOutputDevice):
         if self._is_printing:
             return  # Aleady printing
 
+        # cancel any ongoing preheat timer before starting a print
+        self._printers[0].getController().stopPreheatTimers()
+
         Application.getInstance().getController().setActiveStage("MonitorStage")
 
         # find the G-code for the active build plate to print
@@ -305,7 +308,21 @@ class USBPrinterOutputDevice(PrinterOutputDevice):
             if b"ok T:" in line or line.startswith(b"T:") or b"ok B:" in line or line.startswith(b"B:"):  # Temperature message. 'T:' for extruder and 'B:' for bed
                 extruder_temperature_matches = re.findall(b"T(\d*): ?([\d\.]+) ?\/?([\d\.]+)?", line)
                 # Update all temperature values
-                for match, extruder in zip(extruder_temperature_matches, self._printers[0].extruders):
+                matched_extruder_nrs = []
+                for match in extruder_temperature_matches:
+                    extruder_nr = 0
+                    if match[0] != b"":
+                        extruder_nr = int(match[0])
+
+                    if extruder_nr in matched_extruder_nrs:
+                        continue
+                    matched_extruder_nrs.append(extruder_nr)
+
+                    if extruder_nr >= len(self._printers[0].extruders):
+                        Logger.log("w", "Printer reports more temperatures than the number of configured extruders")
+                        continue
+
+                    extruder = self._printers[0].extruders[extruder_nr]
                     if match[1]:
                         extruder.updateHotendTemperature(float(match[1]))
                     if match[2]:
@@ -362,13 +379,14 @@ class USBPrinterOutputDevice(PrinterOutputDevice):
 
     def resumePrint(self):
         self._paused = False
+        self._sendNextGcodeLine() #Send one line of g-code next so that we'll trigger an "ok" response loop even if we're not polling temperatures.
 
     def cancelPrint(self):
         self._gcode_position = 0
         self._gcode.clear()
         self._printers[0].updateActivePrintJob(None)
         self._is_printing = False
-        self._is_paused = False
+        self._paused = False
 
         # Turn off temperatures, fan and steppers
         self._sendCommand("M140 S0")

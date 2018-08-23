@@ -1,7 +1,6 @@
 # Copyright (c) 2018 Ultimaker B.V.
 # Cura is released under the terms of the LGPLv3 or higher.
 from UM.Application import Application
-from UM.Math.Color import Color
 from UM.Resources import Resources
 
 from UM.View.RenderPass import RenderPass
@@ -74,17 +73,16 @@ class PreviewPass(RenderPass):
 
         # Create batches to be rendered
         batch = RenderBatch(self._shader)
-        batch_non_printing = RenderBatch(self._non_printing_shader, type = RenderBatch.RenderType.Transparent)
         batch_support_mesh = RenderBatch(self._support_mesh_shader)
 
         # Fill up the batch with objects that can be sliced. `
         for node in DepthFirstIterator(self._scene.getRoot()):
             if node.callDecoration("isSliceable") and node.getMeshData() and node.isVisible():
                 per_mesh_stack = node.callDecoration("getStack")
-                if node.callDecoration("isNonPrintingMesh"):
+                if node.callDecoration("isNonThumbnailVisibleMesh"):
                     # Non printing mesh
-                    batch_non_printing.addItem(node.getWorldTransformation(), node.getMeshData(), uniforms = {})
-                elif per_mesh_stack is not None and per_mesh_stack.getProperty("support_mesh", "value") == True:
+                    continue
+                elif per_mesh_stack is not None and per_mesh_stack.getProperty("support_mesh", "value"):
                     # Support mesh
                     uniforms = {}
                     shade_factor = 0.6
@@ -112,7 +110,5 @@ class PreviewPass(RenderPass):
 
         batch.render(render_camera)
         batch_support_mesh.render(render_camera)
-        batch_non_printing.render(render_camera)
 
         self.release()
-
