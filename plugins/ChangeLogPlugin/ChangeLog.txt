@@ -5,6 +5,10 @@
 - Conical and tree supports are now limited within the build plate volume.
 - Fixed various startup crashes, including: copying of the version folder, errors while deleting packages, storing the old files, and losing data on install.
 
+*Robo edits
+- added R2 Dual extrusion support
+- Added retraction_amount_multiplier, useful for fine-tuning retraction settings between the direct and bowden drives.
+
 [3.4.0]
 
 *Toolbox
