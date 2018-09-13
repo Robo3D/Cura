@@ -2195,6 +2195,16 @@
                     "settable_per_mesh": false,
                     "settable_per_extruder": true
                 },
+                "retraction_amount_multiplier":
+                {
+                    "label": "Retraction Distance Multiplier",
+                    "description": "Multiplier for the length of material retracted during a retraction move. This setting compensates filament compressions in the bowden tube for different bowden types/lengths.",
+                    "type": "float",
+                    "default_value": 1,
+                    "enabled": false,
+                    "settable_per_mesh": false,
+                    "settable_per_extruder": true
+                },
                 "retraction_speed":
                 {
                     "label": "Retraction Speed",
@@ -4946,7 +4956,7 @@
                     "description": "Make the prime tower as a circular shape.",
                     "type": "bool",
                     "enabled": "resolveOrValue('prime_tower_enable')",
-                    "default_value": true,
+                    "default_value": false,
                     "resolve": "any(extruderValues('prime_tower_circular'))",
                     "settable_per_mesh": false,
                     "settable_per_extruder": false
