@@ -11,7 +11,7 @@
 The plugin browser has been remodeled into the Toolbox. Navigation now involves graphical elements such as tiles, which can be clicked for further details.
 
 *Upgradable bundled resources
-It is now possible to have multiple versions of bundled resources installed: the bundled version and the downloaded upgrade. If an upgrade in the form of a package is present, the bundled version will not be loaded. If it's not present, Cura for Robo will revert to the bundled version.
+It is now possible to have multiple versions of bundled resources installed: the bundled version and the downloaded upgrade. If an upgrade in the form of a package is present, the bundled version will not be loaded. If it's not present, Ultimaker Cura will revert to the bundled version.
 
 *Package manager recognizes bundled resources
 Bundled packages are now made visible to the CuraPackageMangager. This means the resources are included by default, as well as the "wrapping" of a package, (e.g. package.json) so that the CuraPackageManger and Toolbox recognize them as being installed.
@@ -71,19 +71,19 @@ Option to hide bed temperature when no heated bed is present. Contributed by ngr
 RepRap firmware now lists values for all extruders in the "Filament used" GCODE comment. Contributed by smartavionics.
 
 *AutoDesk Inventor integration
-Open AutoDesk inventor files (parts, assemblies, drawings) directly into Cura for Robo. Contributed by thopiekar.
+Open AutoDesk inventor files (parts, assemblies, drawings) directly into Ultimaker Cura. Contributed by thopiekar.
 
 *Blender integration
-Open Blender files directly into Cura for Robo. Contributed by thopiekar.
+Open Blender files directly into Ultimaker Cura. Contributed by thopiekar.
 
 *OpenSCAD integration
-Open OpenSCAD files directly into Cura for Robo. Contributed by thopiekar.
+Open OpenSCAD files directly into Ultimaker Cura. Contributed by thopiekar.
 
 *FreeCAD integration
-Open FreeCAD files directly into Cura for Robo. Contributed by thopiekar.
+Open FreeCAD files directly into Ultimaker Cura. Contributed by thopiekar.
 
 *OctoPrint plugin
-New version of the OctoPrint plugin for Cura for Robo. Contributed by fieldOfView.
+New version of the OctoPrint plugin for Ultimaker Cura. Contributed by fieldOfView.
 
 *Cura Backups
 Backup and restore your configuration, including settings, materials and plugins, for use across different systems.
@@ -181,7 +181,7 @@ Disable an extruder on a dual extrusion printer, so you are not limited by the o
 UFP (Ultimaker format package) is a new file extension that contains compressed gcode and a preview thumbnail. Using this extension enables a model preview (similar to the solid view) on the Ultimaker S5 touchscreen and in Cura Connect.
 
 *Compressed Gcode
-Gcode saved from Cura for Robo using the Ultimaker 3 profile is compressed (using gzip) to save space on printers.
+Gcode saved from Ultimaker Cura using the Ultimaker 3 profile is compressed (using gzip) to save space on printers.
 
 *Circular prime tower
 Prime towers are now circular, resulting in a less jerky print head action, a more robust structure, better layer adhesion, and better build plate adhesion compared to square prime towers, reducing the chance of prime tower failure mid-print.
@@ -214,7 +214,7 @@ Removes retractions on layer change in spiralize mode, improving model quality.
 Until now, the path order optimizer worked on the basis that the shortest possible route could be taken from any one point to another. When combing is used, any route may longer, due to the need to route around obstacles. Now, it can use the combed distances to give more consistent results.
 
 *New plugins - Pheneeny
-Three new plugins have been added to Cura for Robo: Scalable extra prime, Print temperature offset, and Enclosure fan.
+Three new plugins have been added to Ultimaker Cura: Scalable extra prime, Print temperature offset, and Enclosure fan.
 
 *Pre-heat extruders - fieldOfView
 This new feature allows to preheat the extruders in the printer monitor.
@@ -223,7 +223,7 @@ This new feature allows to preheat the extruders in the printer monitor.
 This script has been renamed to be more consistent with other scripts.
 
 *Import XML material profile checks
-XML material profile files are now checked before import in Cura for Robo to avoid potential issues. Contributed by fieldOfView.
+XML material profile files are now checked before import in Ultimaker Cura to avoid potential issues. Contributed by fieldOfView.
 
 *Bug fixes
 - Slice engine crash default temperature 0. Fixed an issue where the slicing engine could crash when slicing with a material at 0°C.
@@ -276,7 +276,7 @@ New button in the left toolbar to edit per model settings, giving the user more 
 Quick camera controls introduced in version 3.1 have been revised to create more accurate isometric, front, left, and right views.
 
 *Updated sidebar to QtQuick 2.0
-Application framework updated to increase speed, achieve a better width and style fit, and gives users dropdown menus that are styled to fit the enabled Cura for Robo theme, instead of the operating system’s theme.
+Application framework updated to increase speed, achieve a better width and style fit, and gives users dropdown menus that are styled to fit the enabled Ultimaker Cura theme, instead of the operating system’s theme.
 
 *Hide sidebar
 The sidebar can now be hidden/shown by selecting View > Expand/Collapse Sidebar, or with the hotkey CMD + E (Mac) or CTRL + E (PC and Linux).
@@ -291,7 +291,7 @@ For security-conscious users, the Windows installer and Windows binaries have be
 Variables from both extruders in the start and end gcode snippets can now be accessed and edited, creating uniformity between profiles in different slicing environments. Contributed by fieldOfView.
 
 *OctoPrint plugin added to plugin browser
-This plugin enables printers managed with OctoPrint to print via Cura for Robo interface (version 3.2 or later).
+This plugin enables printers managed with OctoPrint to print via Ultimaker Cura interface (version 3.2 or later).
 
 *Bugfixes
 - Fixed a bug where the mirror tool and center model options when used together would reset the model transformations
@@ -316,7 +316,7 @@ New buttons have been added to the interface that can quickly reposition the cam
 The move tool has a new option to lock a selected model to the platform.
 
 *Faster profile switching speed
-Duplicating and removing a profile could take Cura for Robo quite some time, it now happens instantly.
+Duplicating and removing a profile could take Ultimaker Cura quite some time, it now happens instantly.
 
 *Faster printer selection
 Removing a printer from the library is now instant. No more unresponsive screens.
@@ -331,10 +331,10 @@ Feedrate visualization has been added to the Layer view. Using this gives the us
 It allows the printhead to be moved with on-screen controls. Contributed by fieldOfView.
 
 *Large model loading
-A new feature has been added which unloads the layer view when switching to solid mode, speeding Cura for Robo back up without losing your G-code/layer view information.
+A new feature has been added which unloads the layer view when switching to solid mode, speeding Ultimaker Cura back up without losing your G-code/layer view information.
 
 *Scripts folder
-A scripts folder is now available in the Cura for Robo configuration folder. This folder can be loaded with post processing plugins scripts, which will automatically show in Cura for Robo. Contributed by fieldOfView.
+A scripts folder is now available in the Ultimaker Cura configuration folder. This folder can be loaded with post processing plugins scripts, which will automatically show in Ultimaker Cura. Contributed by fieldOfView.
 
 *Optimized workflow for crash reporting
 Crash reports are automatically generated and allow the user, in case of a crash, to easily send their report with a description to developers.
@@ -362,7 +362,7 @@ If profile settings have been modified in recommended mode under custom mode, a 
 
 *Bugfixes
 - Fix for layer numbers being displayed incorrectly when switching between solid and layer mode
-- Fix for Cura for Robo engine crashes on certain models
+- Fix for Ultimaker Cura engine crashes on certain models
 - Fix for Uninstalling previous versions of Cura on Windows platforms
 - Fix for displaying visible settings
 - Fix for importing legacy .ini files
@@ -383,13 +383,13 @@ If profile settings have been modified in recommended mode under custom mode, a 
 Start-up speed has been cut in half compared to the previous version.
 
 *New color scheme
-Color scheme has been updated to reflect Cura for Robo rebrand.
+Color scheme has been updated to reflect Ultimaker Cura rebrand.
 
 *Updated UX design
-The Cura for Robo logo has moved from the bottom to the top of the interface. Print status icons have been updated and repositioned.
+The Ultimaker Cura logo has moved from the bottom to the top of the interface. Print status icons have been updated and repositioned.
 
 *Redesigned splash screen
-A new splash screen on Cura for Robo startup has been added.
+A new splash screen on Ultimaker Cura startup has been added.
 
 *Top navigation bar improvements
 The width of tab functionality changes accordingly to the word space (multilingual).
@@ -410,10 +410,10 @@ The build plate now shows graduations of 10 mm and 1 mm for easy model positioni
 Extruder tabs have become buttons and icons have been updated.
 
 *Add an "Export to Cura" button in SOLIDWORKS
-A macro can be added to your SOLIDWORKS installation that loads your model into Cura for Robo.
+A macro can be added to your SOLIDWORKS installation that loads your model into Ultimaker Cura.
 
 *Siemens NX macro
-When a user updates models in Siemens NX and clicks the button, the updated models replace the models opened in Cura for Robo.
+When a user updates models in Siemens NX and clicks the button, the updated models replace the models opened in Ultimaker Cura.
 
 *Skin removal width
 Remove thin strips of skin from a model to prevent print head zigzagging, in turn preventing vibrations.
