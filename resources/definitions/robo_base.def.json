@@ -117,11 +117,11 @@
             "raft_surface_layers": { "value": "3" },
             "raft_surface_thickness": { "value": "0.15" },
 
-            "retraction_amount": { "default_value": 1.5 },
+            "retraction_amount": { "default_value": 2 },
             "retraction_prime_speed": { "maximum_value_warning": "machine_max_feedrate_e" },
             "retraction_count_max": { "value": "10" },
             "retraction_extrusion_window": { "value": "1" },
-            "retraction_min_travel": { "value": "5" },
+            "retraction_min_travel": { "value": "1.5" },
             "retraction_extra_prime_amount": { "default_value": 0.15 },
             "retraction_amount_multiplier": { "enabled": "extruders_enabled_count > 1" },
             "travel_retract_before_outer_wall":
