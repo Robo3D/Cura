@@ -1,13 +1,15 @@
 # Copyright (c) 2018 Ultimaker B.V.
 # Cura is released under the terms of the LGPLv3 or higher.
 
+from typing import TYPE_CHECKING
+
 from cura.PrinterOutput.PrinterOutputController import PrinterOutputController
 from PyQt5.QtCore import QTimer
 
-MYPY = False
-if MYPY:
+if TYPE_CHECKING:
     from cura.PrinterOutput.PrintJobOutputModel import PrintJobOutputModel
     from cura.PrinterOutput.PrinterOutputModel import PrinterOutputModel
+    from cura.PrinterOutput.ExtruderOutputModel import ExtruderOutputModel
 
 
 class GenericOutputController(PrinterOutputController):
@@ -58,8 +60,7 @@ class GenericOutputController(PrinterOutputController):
         self._output_device.sendCommand("G90")
 
     def homeHead(self, printer):
-        self._output_device.sendCommand("G28 X")
-        self._output_device.sendCommand("G28 Y")
+        self._output_device.sendCommand("G28 X Y")
 
     def homeBed(self, printer):
         self._output_device.sendCommand("G28 Z")
@@ -152,3 +153,17 @@ class GenericOutputController(PrinterOutputController):
         for extruder in self._preheat_hotends:
             self.setTargetHotendTemperature(extruder.getPrinter(), extruder.getPosition(), 0)
         self._preheat_hotends = set()
+
+    # Cancel any ongoing preheating timers, without setting back the temperature to 0
+    # This can be used eg at the start of a print
+    def stopPreheatTimers(self):
+        if self._preheat_hotends_timer.isActive():
+            for extruder in self._preheat_hotends:
+                extruder.updateIsPreheating(False)
+            self._preheat_hotends = set()
+
+            self._preheat_hotends_timer.stop()
+
+        if self._preheat_bed_timer.isActive():
+            self._preheat_printer.updateIsPreheating(False)
+            self._preheat_bed_timer.stop()

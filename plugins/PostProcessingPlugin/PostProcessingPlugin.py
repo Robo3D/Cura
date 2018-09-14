@@ -1,5 +1,6 @@
-# Copyright (c) 2015 Jaime van Kessel, Ultimaker B.V.
+# Copyright (c) 2018 Jaime van Kessel, Ultimaker B.V.
 # The PostProcessingPlugin is released under the terms of the AGPLv3 or higher.
+
 from PyQt5.QtCore import QObject, pyqtProperty, pyqtSignal, pyqtSlot
 
 from UM.PluginRegistry import PluginRegistry
@@ -208,7 +209,7 @@ class PostProcessingPlugin(QObject, Extension):
         for script_str in scripts_list_strs.split("\n"): #Encoded config files should never contain three newlines in a row. At most 2, just before section headers.
             if not script_str: #There were no scripts in this one (or a corrupt file caused more than 3 consecutive newlines here).
                 continue
-            script_str = script_str.replace("\\n", "\n").replace("\\\\", "\\") #Unescape escape sequences.
+            script_str = script_str.replace(r"\\\n", "\n").replace(r"\\\\", "\\\\") #Unescape escape sequences.
             script_parser = configparser.ConfigParser(interpolation = None)
             script_parser.optionxform = str #Don't transform the setting keys as they are case-sensitive.
             script_parser.read_string(script_str)
@@ -241,14 +242,14 @@ class PostProcessingPlugin(QObject, Extension):
             parser.write(serialized)
             serialized.seek(0)
             script_str = serialized.read()
-            script_str = script_str.replace("\\", "\\\\").replace("\n", "\\n") #Escape newlines because configparser sees those as section delimiters.
+            script_str = script_str.replace("\\\\", r"\\\\").replace("\n", r"\\\n") #Escape newlines because configparser sees those as section delimiters.
             script_list_strs.append(script_str)
 
         script_list_strs = "\n".join(script_list_strs) #ConfigParser should never output three newlines in a row when serialised, so it's a safe delimiter.
 
         global_stack = Application.getInstance().getGlobalContainerStack()
         if "post_processing_scripts" not in global_stack.getMetaData():
-            global_stack.addMetaDataEntry("post_processing_scripts", "")
+            global_stack.setMetaDataEntry("post_processing_scripts", "")
         Application.getInstance().getGlobalContainerStack().setMetaDataEntry("post_processing_scripts", script_list_strs)
 
     ##  Creates the view used by show popup. The view is saved because of the fairly aggressive garbage collection.
@@ -260,6 +261,9 @@ class PostProcessingPlugin(QObject, Extension):
         # Create the plugin dialog component
         path = os.path.join(PluginRegistry.getInstance().getPluginPath("PostProcessingPlugin"), "PostProcessingPlugin.qml")
         self._view = Application.getInstance().createQmlComponent(path, {"manager": self})
+        if self._view is None:
+            Logger.log("e", "Not creating PostProcessing button near save button because the QML component failed to be created.")
+            return
         Logger.log("d", "Post processing view created.")
 
         # Create the save button component
@@ -269,6 +273,9 @@ class PostProcessingPlugin(QObject, Extension):
     def showPopup(self):
         if self._view is None:
             self._createView()
+            if self._view is None:
+                Logger.log("e", "Not creating PostProcessing window since the QML component failed to be created.")
+                return
         self._view.show()
 
     ##  Property changed: trigger re-slice
