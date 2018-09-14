@@ -1080,13 +1080,13 @@ msgstr "Cura 無法啟動"
 #: /home/ruben/Projects/Cura/cura/CrashHandler.py:93
 msgctxt "@label crash message"
 msgid ""
-"<p><b>Oops, Ultimaker Cura has encountered something that doesn't seem right.</p></b>\n"
+"<p><b>Oops, Cura for Robo has encountered something that doesn't seem right.</p></b>\n"
 "                    <p>We encountered an unrecoverable error during start up. It was possibly caused by some incorrect configuration files. We suggest to backup and reset your configuration.</p>\n"
 "                    <p>Backups can be found in the configuration folder.</p>\n"
 "                    <p>Please send us this Crash Report to fix the problem.</p>\n"
 "                "
 msgstr ""
-"<p><b>糟糕，Ultimaker Cura 遇到了一些似乎不正常的事情。</p></b>\n"
+"<p><b>糟糕，Cura for Robo 遇到了一些似乎不正常的事情。</p></b>\n"
 "                    <p>我們在啟動過程中遇到了無法修正的錯誤。這可能是由一些不正確的設定檔造成的。我們建議備份並重置您的設定。</p>\n"
 "                    <p>備份檔案可在設定資料夾中找到。</p>\n"
 "                    <p>請將錯誤報告傳送給我們以修正此問題。</p>\n"
@@ -4032,8 +4032,8 @@ msgstr "匯入所有模型"
 
 #: /home/ruben/Projects/Cura/resources/qml/Cura.qml:19
 msgctxt "@title:window"
-msgid "Ultimaker Cura"
-msgstr "Ultimaker Cura"
+msgid "Cura for Robo"
+msgstr "Cura for Robo"
 
 #: /home/ruben/Projects/Cura/resources/qml/Cura.qml:102
 msgctxt "@title:menu menubar:toplevel"

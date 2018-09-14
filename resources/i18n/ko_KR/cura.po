@@ -1073,12 +1073,12 @@ msgstr "큐라를 시작할 수 없습니다"
 #: /home/ruben/Projects/Cura/cura/CrashHandler.py:93
 msgctxt "@label crash message"
 msgid ""
-"<p><b>Oops, Ultimaker Cura has encountered something that doesn't seem right.</p></b>\n"
+"<p><b>Oops, Cura for Robo has encountered something that doesn't seem right.</p></b>\n"
 "                    <p>We encountered an unrecoverable error during start up. It was possibly caused by some incorrect configuration files. We suggest to backup and reset your configuration.</p>\n"
 "                    <p>Backups can be found in the configuration folder.</p>\n"
 "                    <p>Please send us this Crash Report to fix the problem.</p>\n"
 "                "
-msgstr "<p> <b> 죄송합니다, Ultimaker Cura가 정상적이지 않습니다. </ p> </ b>\n                     <p> 시작할 때 복구 할 수없는 오류가 발생했습니다. 이 오류는 잘못된 구성 파일로 인해 발생할 수 있습니다. 설정을 백업하고 재설정하는 것이 좋습니다. </ p>\n                     <p> 백업은 설정 폴더에서 찾을 수 있습니다. </ p>\n                     <p> 문제를 해결하기 위해이 오류 보고서를 보내주십시오. </ p>\n                 "
+msgstr "<p> <b> 죄송합니다, Cura for Robo가 정상적이지 않습니다. </ p> </ b>\n                     <p> 시작할 때 복구 할 수없는 오류가 발생했습니다. 이 오류는 잘못된 구성 파일로 인해 발생할 수 있습니다. 설정을 백업하고 재설정하는 것이 좋습니다. </ p>\n                     <p> 백업은 설정 폴더에서 찾을 수 있습니다. </ p>\n                     <p> 문제를 해결하기 위해이 오류 보고서를 보내주십시오. </ p>\n                 "
 
 #: /home/ruben/Projects/Cura/cura/CrashHandler.py:102
 msgctxt "@action:button"
@@ -3993,8 +3993,8 @@ msgstr "모두 모델로 가져 오기"
 
 #: /home/ruben/Projects/Cura/resources/qml/Cura.qml:19
 msgctxt "@title:window"
-msgid "Ultimaker Cura"
-msgstr "Ultimaker Cura"
+msgid "Cura for Robo"
+msgstr "Cura for Robo"
 
 #: /home/ruben/Projects/Cura/resources/qml/Cura.qml:102
 msgctxt "@title:menu menubar:toplevel"
