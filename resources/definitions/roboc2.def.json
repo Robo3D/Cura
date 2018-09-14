@@ -1,0 +1,32 @@
+{
+    "version": 2,
+    "name": "Robo C2",
+    "inherits": "robo_base",
+    "metadata": {
+        "author": "Robo",
+        "manufacturer": "Robo",
+        "category": "Robo",
+        "file_formats": "text/x-gcode",
+        "visible": true,
+        "has_machine_quality": true,
+        "has_materials": true,
+        "preferred_quality_type": "normal",
+		    "platform": "roboc2.stl",
+        "platform_offset": [0, -22, -35]
+    },
+
+        "overrides": {
+            "machine_name": { "default_value": "Robo C2" },
+            "machine_start_gcode": {
+                "default_value": "G92 E0 ;zero the extruded length\nG1 X120 Y0 F7000 ;move to priming position\nG1 Z2 ;raise bed\nG1 F200 E10 ;extrude 10 mm of feed stock\nG1 Z10 ;raise bed after priming\nG92 E0 ;zero the extruded length again\nG1 F7000;" },
+            "machine_end_gcode": {
+                "default_value": "; -- END GCODE --\n; -- end of END GCODE --" },
+    	    	"machine_width": { "default_value": 127 },
+            "machine_depth": { "default_value": 127 },
+            "machine_height": { "default_value": 145 },
+            "machine_heated_bed": { "default_value": false },
+            "machine_extruder_count": { "default_value": 1 },
+            "cool_fan_full_at_height": { "value": "5" }
+
+        }
+    }
