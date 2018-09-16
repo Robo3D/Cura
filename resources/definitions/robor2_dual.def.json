@@ -85,7 +85,6 @@
             "retraction_amount": { "default_value": 1.5 },
             "retraction_combing": { "value": "'noskin'" },
             "retraction_hop_enabled": { "default_value": true },
-            "retraction_amount_multiplier": { "enabled": true },
 
             "switch_extruder_retraction_amount": { "value": "8" },
             "switch_extruder_retraction_speeds": { "default_value": 25 },

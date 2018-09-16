@@ -2268,7 +2268,7 @@
                     "description": "Multiplier for the length of material retracted during a retraction move. This setting compensates filament compressions in the bowden tube for different bowden types/lengths.",
                     "type": "float",
                     "default_value": 1,
-                    "enabled": false,
+                    "enabled": "extruders_enabled_count > 1",
                     "settable_per_mesh": false,
                     "settable_per_extruder": true
                 },
