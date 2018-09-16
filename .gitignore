@@ -51,7 +51,6 @@ plugins/CuraVariSlicePlugin
 plugins/Doodle3D-cura-plugin
 plugins/FlatProfileExporter
 plugins/GodMode
-plugins/OctoPrintPlugin
 plugins/ProfileFlattener
 plugins/X3GWriter
 
@@ -71,4 +70,3 @@ cmake_install.cmake
 run.sh
 .scannerwork/
 CuraEngine
-
