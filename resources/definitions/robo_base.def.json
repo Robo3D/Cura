@@ -162,8 +162,6 @@
             "wall_line_width_0": { "value": "machine_nozzle_size * 0.875" },
 
             "z_seam_type": { "value": "'back'" },
-            "z_seam_x": { "value": "int(machine_width/2.) if print_mode == 'regular' else int((machine_width/2.)/2.) if print_mode == 'duplication' else int((machine_width/2. - 54/2)/2.)" },
-            "z_seam_y": { "value": "machine_depth" },
             "z_seam_relative": { "value": false },
             "zig_zaggify_infill": { "value": "gradual_infill_steps == 0" }
         }
