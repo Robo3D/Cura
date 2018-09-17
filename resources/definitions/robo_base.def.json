@@ -6,7 +6,8 @@
         "visible": false,
         "category": "Robo",
         "author": "Robo",
-        "manufacturer": "Robo"
+        "manufacturer": "Robo",
+        "supports_usb_connection": false
     },
 
         "overrides": {
