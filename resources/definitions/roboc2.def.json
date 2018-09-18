@@ -30,6 +30,7 @@
             "machine_height": { "default_value": 145 },
             "machine_heated_bed": { "default_value": false },
             "machine_extruder_count": { "default_value": 1 },
+            "machine_gcode_flavor": { "default_value": "RepRap (Marlin/Sprinter)" },
             "cool_fan_full_at_height": { "value": "5" }
 
         }
