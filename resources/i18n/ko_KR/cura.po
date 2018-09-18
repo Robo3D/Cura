@@ -4233,6 +4233,11 @@ msgctxt "@label"
 msgid "Enable printing a brim or raft. This will add a flat area around or under your object which is easy to cut off afterwards."
 msgstr "브림이나 라프트를 사용합니다. 이렇게하면 출력물 주변이나 아래에 평평한 영역이 추가되어 나중에 쉽게 자를 수 있습니다."
 
+#: /home/ruben/Projects/Cura/resources/qml/SidebarSimple.qml:1043
+msgctxt "@label"
+msgid "Need help improving your prints?<br>Read the <a href='%1'>Ultimaker Troubleshooting Guides</a>"
+msgstr "프린팅물 개선에 도움이 필요하십니까?<a href='%1'>Ultimaker Troubleshooting Guides</a> 읽기"
+
 #: /home/ruben/Projects/Cura/resources/qml/ExtruderButton.qml:16
 msgctxt "@label %1 is filled in with the name of an extruder"
 msgid "Print Selected Model with %1"
@@ -5648,11 +5653,11 @@ msgstr "Cura 프로파일 리더"
 #~ msgctxt "@label"
 #~ msgid ""
 #~ "<p>A fatal exception has occurred that we could not recover from!</p>\n"
-#~ "        <p>Please use the information below to post a bug report at <a href=\"http://github.com/robo3d/Cura/issues\">http://github.com/robo3d/Cura/issues</a></p>\n"
+#~ "        <p>Please use the information below to post a bug report at <a href=\"http://github.com/Ultimaker/Cura/issues\">http://github.com/Ultimaker/Cura/issues</a></p>\n"
 #~ "    "
 #~ msgstr ""
 #~ "복구 할 수없는 치명적인 예외가 발생했습니다!\n"
-#~ "http://github.com/robo3d/Cura/issues에 버그 보고서를 게시하십시오. "
+#~ "http://github.com/Ultimaker/Cura/issues에 버그 보고서를 게시하십시오. "
 
 #~ msgctxt "@action:button"
 #~ msgid "Open Web Page"
