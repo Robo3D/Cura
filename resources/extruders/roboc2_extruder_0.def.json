@@ -1,10 +1,10 @@
 {
-    "id": "robo_extruder_0",
+    "id": "roboc2_extruder_0",
     "version": 2,
     "name": "Extruder",
     "inherits": "fdmextruder",
     "metadata": {
-        "machine": "robor2",
+        "machine": "Robo C2",
         "position": "0"
     },
 
