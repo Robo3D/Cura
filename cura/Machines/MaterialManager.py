@@ -94,7 +94,7 @@ class MaterialManager(QObject):
                               metadata.get("GUID")} # type: Dict[str, Dict[str, Any]]
 
         self._material_group_map = dict()  # type: Dict[str, MaterialGroup]
-                
+
         # Map #1
         #    root_material_id -> MaterialGroup
         for material_id, material_metadata in material_metadatas.items():
@@ -204,12 +204,11 @@ class MaterialManager(QObject):
         for material_metadata in material_metadatas.values():
             self.__addMaterialMetadataIntoLookupTree(material_metadata)
 
-        self.materialsUpdated.emit()
-
         favorites = self._application.getPreferences().getValue("cura/favorite_materials")
         for item in favorites.split(";"):
             self._favorites.add(item)
-        self.favoritesUpdated.emit()
+
+        self.materialsUpdated.emit()
 
     def __addMaterialMetadataIntoLookupTree(self, material_metadata: Dict[str, Any]) -> None:
         material_id = material_metadata["id"]
@@ -635,7 +634,7 @@ class MaterialManager(QObject):
     @pyqtSlot(str)
     def addFavorite(self, root_material_id: str) -> None:
         self._favorites.add(root_material_id)
-        self.favoritesUpdated.emit()
+        self.materialsUpdated.emit()
 
         # Ensure all settings are saved.
         self._application.getPreferences().setValue("cura/favorite_materials", ";".join(list(self._favorites)))
@@ -644,7 +643,7 @@ class MaterialManager(QObject):
     @pyqtSlot(str)
     def removeFavorite(self, root_material_id: str) -> None:
         self._favorites.remove(root_material_id)
-        self.favoritesUpdated.emit()
+        self.materialsUpdated.emit()
 
         # Ensure all settings are saved.
         self._application.getPreferences().setValue("cura/favorite_materials", ";".join(list(self._favorites)))
