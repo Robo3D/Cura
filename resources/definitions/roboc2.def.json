@@ -15,7 +15,7 @@
         "platform_offset": [0, -22, -35],
         "machine_extruder_trains":
         {
-            "0": "robo_extruder_0"
+            "0": "roboc2_extruder_0"
         }
     },
 
