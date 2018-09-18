@@ -12,7 +12,11 @@
         "has_materials": true,
         "preferred_quality_type": "normal",
 		    "platform": "roboc2.stl",
-        "platform_offset": [0, -22, -35]
+        "platform_offset": [0, -22, -35],
+        "machine_extruder_trains":
+        {
+            "0": "robo_extruder_0"
+        }
     },
 
         "overrides": {

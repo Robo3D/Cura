@@ -10,7 +10,11 @@
         "has_materials": true,
         "file_formats": "text/x-gcode",
         "platform": "robor1.stl",
-        "platform_offset": [-113, 0, 105]
+        "platform_offset": [-113, 0, 105],
+        "machine_extruder_trains":
+        {
+            "0": "robo_3d_r1_extruder_0"
+        }
     },
 
     "overrides": {
