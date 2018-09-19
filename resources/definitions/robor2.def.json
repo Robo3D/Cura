@@ -12,11 +12,7 @@
         "preferred_quality_type": "normal",
         "file_formats": "text/x-gcode",
 		    "platform": "robor2.stl",
-        "platform_offset": [-117, -22, -135],
-        "machine_extruder_trains":
-        {
-            "0": "robor2_extruder_0"
-        }
+        "platform_offset": [-117, -22, -135]
     },
 
     "overrides": {
@@ -29,7 +25,6 @@
         "machine_depth": { "default_value": 197 },
         "machine_height": { "default_value": 250 },
         "machine_heated_bed": { "default_value": true },
-        "machine_gcode_flavor": { "default_value": "RepRap (Marlin/Sprinter)" },
         "machine_extruder_count": { "default_value": 1 }
     }
 }
