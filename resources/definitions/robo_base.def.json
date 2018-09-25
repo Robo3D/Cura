@@ -74,6 +74,7 @@
             "cool_fan_speed": { "value": "100" },
             "cool_fan_speed_max": { "value": "100" },
             "cool_min_speed": { "value": "5" },
+            "cool_min_layer_time": { "default_value": 10 },
 
             "infill_pattern": { "value": "'triangles'" },
             "infill_wipe_dist": { "value": "0" },
