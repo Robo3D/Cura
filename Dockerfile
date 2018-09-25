@@ -7,7 +7,7 @@ ENV CURA_APP_DIR=/srv/cura
 RUN mkdir $CURA_APP_DIR
 
 # Setup CuraEngine
-ENV CURA_ENGINE_BRANCH=master
+ENV CURA_ENGINE_BRANCH=3.4
 WORKDIR $CURA_APP_DIR
 RUN git clone -b $CURA_ENGINE_BRANCH --depth 1 https://github.com/Ultimaker/CuraEngine
 WORKDIR $CURA_APP_DIR/CuraEngine
@@ -20,14 +20,14 @@ RUN make install
 # TODO: setup libCharon
 
 # Setup Uranium
-ENV URANIUM_BRANCH=master
+ENV URANIUM_BRANCH=3.4
 WORKDIR $CURA_APP_DIR
 RUN git clone -b $URANIUM_BRANCH --depth 1 https://github.com/Ultimaker/Uranium
 
 # Setup materials
-ENV MATERIALS_BRANCH=master
+ENV MATERIALS_BRANCH=3.4
 WORKDIR $CURA_APP_DIR
-RUN git clone -b $MATERIALS_BRANCH --depth 1 https://github.com/Ultimaker/fdm_materials materials
+RUN git clone -b $MATERIALS_BRANCH --depth 1 https://github.com/robo3d/fdm_materials materials
 
 # Setup Cura
 WORKDIR $CURA_APP_DIR/Cura
