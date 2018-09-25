@@ -6,8 +6,18 @@
 - Fixed various startup crashes, including: copying of the version folder, errors while deleting packages, storing the old files, and losing data on install.
 
 *Robo edits
-- added R2 Dual extrusion support
-- Added retraction_amount_multiplier, useful for fine-tuning retraction settings between the direct and bowden drives.
+*R2 Dual extrusion support
+Dual extrusion on the R2 now supported. Complete with Material and Quality profiles.
+*Retraction multiplier
+Enabled by defining more than one extruder. Value is multiplied by retraction amount - useful for fine-tuning retraction settings between the direct and bowden drives.  Value is changeable between extruders.
+*Octoprint Plugin
+Forked from fieldofview.  Enables printers to be connected to an Octoprint server. https://github.com/fieldOfView/OctoPrintPlugin
+*New Quality and Material profiles for C2 and R2
+Quality and material profiles optimized for the C2 and R2.
+*Colorfabb Materials
+Quality and material profiles for Colorfabb filaments.
+*Verbatim BVOH
+Quality and material profiles for Verbatim BVOH.
 
 [3.4.0]
 
