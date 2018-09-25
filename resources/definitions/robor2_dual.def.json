@@ -66,6 +66,8 @@
             "adhesion_type": { "default_value": "skirt" },
             "brim_width": { "value": "3" },
 
+            "cool_fan_full_layer": { "value": "6" },
+
             "material_standby_temperature": { "value": "100" },
 
             "ooze_shield_angle": { "default_value": 45 },
